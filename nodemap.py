@@ -66,7 +66,7 @@ def cmd(cmdline):
 
         Uses shell, blocks until subprocess returns.
     """
-    proc = subprocess.Popen(cmdline, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE) # need shell else lctl not found
+    proc = subprocess.Popen(cmdline, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE) # need shell else lctl not found
     stdout, stderr = proc.communicate()
     return stdout, stderr
 
