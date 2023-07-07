@@ -55,7 +55,7 @@ NODEMAP_SET_FILESET = "lctl nodemap_set_fileset --name {nodemap} --fileset {new!
 NODEMAP_MODIFY = "lctl nodemap_modify --name {nodemap} --property {property} --value {new}"
 NODEMAP_CHANGE_IDMAP = "lctl nodemap_{mode}_idmap --name {nodemap} --idtype {idtype} --idmap {client_id}:{fs_id}"
 NODEMAP_CHANGE_RANGE = "lctl nodemap_{mode}_range --name {nodemap} --range {nid}"
-NODEMAP_MODIFY_PARAMS = 'squash_gid squash_uid deny_unknown'.split()
+NODEMAP_MODIFY_PARAMS = 'squash_gid squash_uid deny_unknown readonly_mount'.split()
 # NB for the next two commands the exported yaml (from `lctl get_param nodemap.<nodemap_name>.*`) has e.g. "admin_nodemap" whereas `lctl nodemap_modify --property` just has "admin", unhelpfully!
 NODEMAP_SET_ADMIN = "lctl nodemap_modify --name {nodemap} --property admin --value {new}"
 NODEMAP_SET_TRUSTED = "lctl nodemap_modify --name {nodemap} --property trusted --value {new}"
